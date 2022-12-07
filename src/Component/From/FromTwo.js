@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { FromContext } from '../../Context/FromProvider';
 
 const FromTwo = () => {
+
+    const {fromOneData} = useContext(FromContext)
+
+    const {projectName,
+        projectDec,
+        clientName,
+        contractorName} = fromOneData;
+
+    console.log(fromOneData);
     
     return (
         <>
@@ -12,21 +22,21 @@ const FromTwo = () => {
                 <div className="mt-8 md:flex items-center">
                     <div className="flex flex-col">
                         <label className="mb-3 text-sm leading-none text-gray-800">Project Name</label>
-                        <input type="text"  placeholder="Project Name" className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200"  />
+                        <input type="text"  defaultValue={projectName} disabled className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200"  />
                     </div>
                     <div className="flex flex-col md:ml-12 md:mt-0 mt-8">
                         <label className="mb-3 text-sm leading-none text-gray-800">Project Description</label>
-                        <textarea type="text"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Project Description' />
+                        <textarea type="text"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Project Description'   defaultValue={projectDec} disabled/>
                     </div>
                 </div>
                 <div className="mt-12 md:flex items-center">
                     <div className="flex flex-col">
                         <label className="mb-3 text-sm leading-none text-gray-800">Client</label>
-                        <input type="text"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='client name' />
+                        <input type="text"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='client name'   defaultValue={clientName} disabled/>
                     </div>
                     <div className="flex flex-col md:ml-12 md:mt-0 mt-8">
                         <label className="mb-3 text-sm leading-none text-gray-800">Contractor</label>
-                        <input type="text" className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Contractor Name' />
+                        <input type="text" className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Contractor Name'   defaultValue={contractorName} disabled/>
                     </div>
                 </div>
 

@@ -16,7 +16,10 @@ const FromProvider = ({children}) => {
         contractorName
     }
 
-    const data ={ fromOneData,setProjectName,setProjectDec,setClientName,setContractorName}
+    const data ={ fromOneData,setProjectName,setProjectDec,setClientName,setContractorName,projectName,
+        projectDec,
+        clientName,
+        contractorName}
 
     return (
         <FromContext.Provider value={data}>{children}</FromContext.Provider>
