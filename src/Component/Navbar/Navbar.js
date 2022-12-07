@@ -4,7 +4,6 @@ import { Link, NavLink } from 'react-router-dom';
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
 
-console.log(toggle);
 
     return (
         <header aria-label="Site Header" className="bg-gray-200">
