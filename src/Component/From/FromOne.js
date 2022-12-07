@@ -1,7 +1,16 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { FromContext } from '../../Context/FromProvider';
 
 const FromOne = () => {
+    const {fromOneData,setProjectName,setProjectDec,setClientName,setContractorName} = useContext(FromContext)
+
+
+
+    console.log(fromOneData);
+
+
+
     return (
         <> <h2 className="text-xl font-semibold leading-7 text-gray-800 mt-10">
         Project Information

@@ -5,7 +5,6 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 const Home = () => {
     const location = useLocation()
-    console.log(location.pathname);
 
     return (
         <div className='container max-w-screen-2xl md:w-[600px] mx-auto'>
