@@ -7,12 +7,12 @@ const Navbar = () => {
 
     return (
         <header aria-label="Site Header" className="bg-gray-200">
-  <div className="mx-auto relative max-w-screen-xl px-4 sm:px-6 lg:px-8">
+  <div className="mx-auto relative container px-4 sm:px-6 lg:px-8">
     <div className="flex h-16 items-center justify-between">
       <div className="flex-1 md:flex md:items-center md:gap-12">
         <Link className="block flex items-center gap-3" to="/">
           <img className='h-10' src="https://i.ibb.co/nCc6shs/download-removebg-preview.png" alt="" />
-          <h2 className='text-3xl font-bold'>ABC Engine</h2>
+          <h2 className='text-3xl font-bold font-serif'>ABC Engine</h2>
         </Link>
       </div>
 

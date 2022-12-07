@@ -13,9 +13,6 @@ const FromOne = () => {
         clientName,
         contractorName} = useContext(FromContext)
 
-
-
-
     return (
         <> <h2 className="text-xl font-semibold leading-7 text-gray-800 mt-10">
         Project Information
@@ -24,21 +21,21 @@ const FromOne = () => {
     <div className="mt-8 md:flex items-center">
         <div className="flex flex-col">
             <label className="mb-3 text-sm leading-none text-gray-800">Project Name</label>
-            <input onChange={(e)=>setProjectName(e.target.value)} type="text"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200"  placeholder='Project Name'/>
+            <input onChange={(e)=>setProjectName(e.target.value)} type="text"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200"   defaultValue={projectName} placeholder='Project Name'/>
         </div>
         <div className="flex flex-col md:ml-12 md:mt-0 mt-8">
             <label className="mb-3 text-sm leading-none text-gray-800">Project Description</label>
-            <textarea  onChange={(e)=>setProjectDec(e.target.value)} type="name" className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Project Description' />
+            <textarea  onChange={(e)=>setProjectDec(e.target.value)} type="name" className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Project Description' defaultValue={projectDec}/>
         </div>
     </div>
     <div className="mt-12 md:flex items-center">
         <div className="flex flex-col">
             <label className="mb-3 text-sm leading-none text-gray-800">Client</label>
-            <input  onChange={(e)=>setClientName(e.target.value)}  type="text" className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='client name' />
+            <input  onChange={(e)=>setClientName(e.target.value)}  type="text" className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='client name' defaultValue={clientName}/>
         </div>
         <div className="flex flex-col md:ml-12 md:mt-0 mt-8">
             <label className="mb-3 text-sm leading-none text-gray-800">Contractor</label>
-            <input  onChange={(e)=>setContractorName(e.target.value)} type="text"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Contractor Name' />
+            <input  onChange={(e)=>setContractorName(e.target.value)} type="text"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Contractor Name' defaultValue={contractorName}/>
         </div>
 
        
