@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Chart from "../Component/Chart/Chart";
 import ErrorPage from "../Component/ErrorPage/ErrorPage";
 import FromOne from "../Component/From/FromOne";
 import FromTwo from "../Component/From/FromTwo";
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         {
             path: "result",
             element: <ResultPage/>,
+        },
+        {
+            path: "chart",
+            element: <Chart/>,
         }
       ]
     }

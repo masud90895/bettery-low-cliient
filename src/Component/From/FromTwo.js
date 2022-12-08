@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FromContext } from '../../Context/FromProvider';
 import { useCSVReader } from 'react-papaparse';
 import CsvFile from './CsvFile';
@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 
 const FromTwo = () => {
     const [csvData,setCsvData]=useState([])
+    const navigate = useNavigate()
     
     
     const {
@@ -101,6 +102,7 @@ const FromTwo = () => {
             }
             setAllCsvData(csvData);
             toast.success("data added successfully")
+            navigate("/result")
         }
 
 
