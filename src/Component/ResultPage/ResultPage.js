@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { FromContext } from '../../Context/FromProvider';
+import Pdf from "react-to-pdf";
 
+
+const ref = React.createRef();
 const ResultPage = () => {
     const {allcsvData} = useContext(FromContext)
     console.log(allcsvData);
@@ -8,10 +11,16 @@ const ResultPage = () => {
     const {projectName,projectDec,clientName,contractorName,maxX,maxY,maxZ,minX,minY,minZ}  = allcsvData
     return (
         <div className="overflow-x-auto">
-            <div className='my-8 text-center text-4xl font-bold font-serif'>
+            <div className='my-8 flex justify-center gap-8 text-center text-4xl font-bold font-serif'>
                 <h1>Result Page</h1>
+                <Pdf targetRef={ref} filename="Result-Page.pdf">
+        {({ toPdf }) => <button  onClick={toPdf}  className='w-[96px]'> 
+                <img src="https://i.ibb.co/wLc5xSD/59060d6c0cbeef0acff9a65f.png" alt="" />
+                </button>}
+      </Pdf>
+                
             </div>
-  <table className="table mx-auto table-compact w-[50%]"> 
+  <table ref={ref} className="table mx-auto table-compact w-[50%]"> 
     <tbody>
       <tr>
         <th>1</th> 
