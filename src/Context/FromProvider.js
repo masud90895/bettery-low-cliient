@@ -6,6 +6,7 @@ const FromProvider = ({children}) => {
     const [projectDec,setProjectDec] = useState('')
     const [clientName,setClientName] = useState('')
     const [contractorName,setContractorName] = useState('')
+    const [allcsvData,setAllCsvData]=useState({})
 
     //max min value
     const [maxX,setMaxX] = useState('')
@@ -37,7 +38,9 @@ const FromProvider = ({children}) => {
         maxY,setMaxY,
         minY,setMinY,
         maxZ,setMaxZ,
-        minZ,setMinZ
+        minZ,setMinZ,
+        setAllCsvData,
+        allcsvData
     }
 
     return (

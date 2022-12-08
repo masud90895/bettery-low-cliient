@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import FromProvider from './Context/FromProvider';
+import { Toaster } from 'react-hot-toast';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <FromProvider>
+    <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
       <App />
       </FromProvider>
     

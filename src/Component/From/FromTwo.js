@@ -3,16 +3,21 @@ import { Link } from 'react-router-dom';
 import { FromContext } from '../../Context/FromProvider';
 import { useCSVReader } from 'react-papaparse';
 import CsvFile from './CsvFile';
+import toast from 'react-hot-toast';
 
 const FromTwo = () => {
     const [csvData,setCsvData]=useState([])
+    
+    
     const {
         maxX,setMaxX,
         minX,setMinX,
         maxY,setMaxY,
         minY,setMinY,
         maxZ,setMaxZ,
-        minZ,setMinZ} = useContext(FromContext)
+        minZ,setMinZ,
+        setAllCsvData
+    } = useContext(FromContext)
 
 
 
@@ -24,7 +29,6 @@ const FromTwo = () => {
     const maxY2 = Math.max.apply(Math, csvSlicedData?.map(v => setMaxY(v[2])));
     const maxZ3 = Math.max.apply(Math, csvSlicedData?.map(v => setMaxZ(v[3])));
     const maxArr = [maxX, maxY, maxZ]
-    console.log(maxArr)
 
     // for minNumber
     const minX1 = Math.min.apply(Math, csvSlicedData?.map(v => setMinX(v[1])));
@@ -95,7 +99,8 @@ const FromTwo = () => {
             const csvData ={
                 projectName,projectDec,clientName,contractorName,maxX,maxY,maxZ,minX,minY,minZ
             }
-            console.log(csvData);
+            setAllCsvData(csvData);
+            toast.success("data added successfully")
         }
 
 
@@ -153,33 +158,33 @@ const FromTwo = () => {
                 <div className="mt-12 md:flex items-center">
                     <div className="flex flex-col">
                         <label className="mb-3 text-sm leading-none text-gray-800">Max X</label>
-                        <input name='maxXValue' type="number"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Max X value' defaultValue={maxX}/>
+                        <input name='maxXValue' type="number"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Max X value' defaultValue={maxX} required/>
                     </div>
                     <div className="flex flex-col md:ml-12 md:mt-0 mt-8">
                         <label className="mb-3 text-sm leading-none text-gray-800">Min X</label>
-                        <input name='minXValue' type="number" className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Min X value' defaultValue={minX}/>
+                        <input name='minXValue' type="number" className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Min X value' defaultValue={minX} required/>
                     </div>
                 </div>
 
                 <div className="mt-12 md:flex items-center">
                     <div className="flex flex-col">
                         <label  className="mb-3 text-sm leading-none text-gray-800">Max Y</label>
-                        <input name='maxYValue' type="number"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Max Y value' defaultValue={maxY} />
+                        <input name='maxYValue' type="number"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Max Y value' defaultValue={maxY}  required/>
                     </div>
                     <div className="flex flex-col md:ml-12 md:mt-0 mt-8">
                         <label className="mb-3 text-sm leading-none text-gray-800">Min Y</label>
-                        <input name='minYValue' type="number" className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Min Y value' defaultValue={minY}/>
+                        <input name='minYValue' type="number" className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Min Y value' defaultValue={minY} required/>
                     </div>
                 </div>
 
                 <div className="mt-12 md:flex items-center">
                     <div className="flex flex-col">
                         <label className="mb-3 text-sm leading-none text-gray-800">Max Z</label>
-                        <input name='maxZValue' type="number"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Max Z value' defaultValue={maxZ}/>
+                        <input name='maxZValue' type="number"  className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Max Z value' defaultValue={maxZ} required/>
                     </div>
                     <div className="flex flex-col md:ml-12 md:mt-0 mt-8">
                         <label className="mb-3 text-sm leading-none text-gray-800">Min Z</label>
-                        <input name='minZValue' type="number" className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Min Z value' defaultValue={minZ}/>
+                        <input name='minZValue' type="number" className="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" placeholder='Min Z value' defaultValue={minZ} required/>
                     </div>
                 </div>
 
