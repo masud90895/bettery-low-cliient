@@ -7,7 +7,14 @@ const FromProvider = ({children}) => {
     const [clientName,setClientName] = useState('')
     const [contractorName,setContractorName] = useState('')
 
-
+    //max min value
+    const [maxX,setMaxX] = useState('')
+    const [maxY,setMaxY] = useState('')
+    const [maxZ,setMaxZ] = useState('')
+    const [minX,setMinX] = useState('')
+    const [minY,setMinY] = useState('')
+    const [minZ,setMinZ] = useState('')
+    
 
     const  fromOneData ={
         projectName,
@@ -16,10 +23,22 @@ const FromProvider = ({children}) => {
         contractorName
     }
 
-    const data ={ fromOneData,setProjectName,setProjectDec,setClientName,setContractorName,projectName,
+    const data ={ fromOneData,
+        setProjectName,
+        setProjectDec,
+        setClientName,
+        setContractorName,
+        projectName,
         projectDec,
         clientName,
-        contractorName}
+        contractorName,
+        maxX,setMaxX,
+        minX,setMinX,
+        maxY,setMaxY,
+        minY,setMinY,
+        maxZ,setMaxZ,
+        minZ,setMinZ
+    }
 
     return (
         <FromContext.Provider value={data}>{children}</FromContext.Provider>
